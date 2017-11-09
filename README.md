@@ -2,7 +2,7 @@
 Behavioral Cloning Project - Udacity Self-Driving Car Engineer Nanodegree. 
 
 ## Description ##
-This project is a part of Udacity's Self Driving Car Nanodegree. The main focus is to develop a deep neural network capable to drive a vehicle on a simulated track.
+This project is a part of the Udacity's Self Driving Car Nanodegree. The main focus is to develop a deep neural network capable to drive a vehicle on a simulated track.
 The input data is generated from human behavior using the same simulator.
 
 ## Deliverables ##
@@ -23,7 +23,7 @@ More detailed project description is available [here](https://github.com/udacity
 Training data can be downloaded from [here](https://d17h27t6h515a5.cloudfront.net/topher/2016/December/584f6edd_data/data.zip). It is important to remove a first descriptive line in a *csv* file.
 
 ## Implementation ##
-The neural network architecture used in this project follows in general terms, Nvidia's DNN described in [this](https://devblogs.nvidia.com/parallelforall/deep-learning-self-driving-cars/) blog post. The simplified neural network was enough to get a track comleted. Network's implementation using [Keras](https://keras.io) is shown below:
+The neural network architecture used in this project follows, in general terms, the Nvidia's DNN described in [this](https://devblogs.nvidia.com/parallelforall/deep-learning-self-driving-cars/) blog post. The simplified neural network was enough to get a track completed. Network's implementation using [Keras](https://keras.io) is shown below:
 ```
 model = Sequential()
 model.add(Lambda(lambda x: x/255.0 - 0.5, input_shape=(160, 320, 3)))
@@ -88,7 +88,7 @@ _________________________________________________________________
 
 ```
 
-At the training stage, the neural network above is feeded with a data by generator. The generator function selects randomly central, left, or right picture from simulator. All training data augmentation is done by `datasetProcessor.py`.
+At the training stage, the neural network above is feeded with a data by generator. The generator function selects randomly central, left, or right picture from one string of the training dataset. All training data augmentation is done by `datasetProcessor.py`.
 
 The training dataset is composed by the following pictures:
 - original pictures
@@ -102,7 +102,7 @@ Training was performed with the following parameters:
 - batch_size = 256
 
 Training and validation performance of the model is depicted in a Figure below.
-![loss](https://github.com/antonpavlov/behavioral-cloning/loss.png)
+![loss](https://github.com/antonpavlov/behavioral-cloning/blob/master/loss.png)
 
 
 ## License ##
