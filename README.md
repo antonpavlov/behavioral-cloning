@@ -23,7 +23,7 @@ More detailed project description is available [here](https://github.com/udacity
 Training data can be downloaded from [here](https://d17h27t6h515a5.cloudfront.net/topher/2016/December/584f6edd_data/data.zip). It is important to remove a first descriptive line in a *csv* file.
 
 ## Implementation ##
-The neural network architecture used in this project follows, in general terms, the Nvidia's DNN described in [this](https://devblogs.nvidia.com/parallelforall/deep-learning-self-driving-cars/) blog post. The simplified neural network was enough to get a track completed. Network's implementation using [Keras](https://keras.io) is shown below:
+The neural network architecture used in this project follows, in general terms, the Nvidia's DNN described in [this](https://devblogs.nvidia.com/parallelforall/deep-learning-self-driving-cars/) blog post. A bit simplified convolutional neural network shown below was enough to get a track completed. Network's implementation using [Keras](https://keras.io) is the following:
 ```
 model = Sequential()
 model.add(Lambda(lambda x: x/255.0 - 0.5, input_shape=(160, 320, 3)))
@@ -101,7 +101,7 @@ Training was performed with the following parameters:
 - learning_rate = 0.0001
 - batch_size = 256
 
-Training and validation performance of the model is depicted in a Figure below.
+An example of training and validation performance of the model is depicted in a Figure below.
 ![loss](https://github.com/antonpavlov/behavioral-cloning/blob/master/loss.png)
 
 

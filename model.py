@@ -14,6 +14,7 @@ from keras.models import Sequential
 from keras.layers import Conv2D, Flatten, Dense, Dropout, Lambda, Cropping2D
 from keras import optimizers
 
+# Training parameters
 epochs = 7
 learning_rate = 0.0001
 batch_size = 256
